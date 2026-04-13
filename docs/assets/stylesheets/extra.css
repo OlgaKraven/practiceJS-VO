@@ -1,0 +1,288 @@
+/* ============================================================
+   ТЕМА — ЦВЕТА
+   ============================================================ */
+:root > * {
+  --md-primary-fg-color:        #f3f2f0;
+  --md-primary-fg-color--light: #ECB7B7;
+  --md-primary-fg-color--dark:  #90030C;
+  --md-accent-fg-color:         #3f51b5;
+}
+
+.md-header__topic {
+  color: #333;
+}
+
+/* ============================================================
+   ИКОНКИ ДЛЯ КАСТОМНЫХ АДМОНИШЕНОВ
+   ============================================================ */
+:root {
+  --md-admonition-icon--concept: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z'/%3E%3C/svg%3E");
+  --md-admonition-icon--task: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M22 5.18L10.59 16.6l-4.24-4.24 1.41-1.41 2.83 2.83 10-10L22 5.18zM12 20c-4.41 0-8-3.59-8-8s3.59-8 8-8c1.57 0 3.04.46 4.28 1.25l1.45-1.45C16.1 2.67 14.13 2 12 2 6.48 2 2 6.48 2 12s4.48 10 10 10c1.73 0 3.36-.44 4.78-1.22l-1.5-1.5c-1 .46-2.11.72-3.28.72z'/%3E%3C/svg%3E");
+  --md-admonition-icon--insight: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z'/%3E%3C/svg%3E");
+  --md-admonition-icon--hint: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z'/%3E%3C/svg%3E");
+  --md-admonition-icon--sandbox: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z'/%3E%3C/svg%3E");
+}
+
+/* ============================================================
+   MERMAID — ZOOM ПРИ НАВЕДЕНИИ
+   ============================================================ */
+.md-typeset .mermaid {
+  transition: transform 0.25s ease;
+  transform-origin: center center;
+  cursor: zoom-in;
+}
+
+.md-typeset .mermaid:hover {
+  transform: scale(2.2);
+  background-color: #fafafa;
+  z-index: 10;
+}
+
+/* ============================================================
+   BLOCKQUOTE
+   ============================================================ */
+.md-typeset blockquote {
+  border-left: 0.3rem solid #3f51b5;
+  background-color: #f5f6ff;
+  padding: 0.6rem 1rem;
+  margin: 1rem 0;
+  color: #1a237e;
+  font-style: normal;
+}
+
+/* ============================================================
+   АДМОНИШЕН: CONCEPT
+   ============================================================ */
+.md-typeset .admonition.concept,
+.md-typeset details.concept {
+  border-color: #3f51b5;
+}
+
+.md-typeset .concept > .admonition-title,
+.md-typeset .concept > summary {
+  background-color: #e8eaf6;
+}
+
+.md-typeset .concept > .admonition-title::before,
+.md-typeset .concept > summary::before {
+  background-color: #3f51b5;
+  -webkit-mask-image: var(--md-admonition-icon--concept);
+          mask-image: var(--md-admonition-icon--concept);
+}
+
+/* ============================================================
+   АДМОНИШЕН: TASK (зелёный)
+   ============================================================ */
+.md-typeset .admonition.task,
+.md-typeset details.task {
+  border-color: #2e7d32;
+}
+
+.md-typeset .task > .admonition-title,
+.md-typeset .task > summary {
+  background-color: #e8f5e9;
+}
+
+.md-typeset .task > .admonition-title::before,
+.md-typeset .task > summary::before {
+  background-color: #2e7d32;
+  -webkit-mask-image: var(--md-admonition-icon--task);
+          mask-image: var(--md-admonition-icon--task);
+}
+
+/* ============================================================
+   АДМОНИШЕН: INSIGHT (оранжевый)
+   ============================================================ */
+.md-typeset .admonition.insight,
+.md-typeset details.insight {
+  border-color: #e65100;
+}
+
+.md-typeset .insight > .admonition-title,
+.md-typeset .insight > summary {
+  background-color: #fff3e0;
+}
+
+.md-typeset .insight > .admonition-title::before,
+.md-typeset .insight > summary::before {
+  background-color: #e65100;
+  -webkit-mask-image: var(--md-admonition-icon--insight);
+          mask-image: var(--md-admonition-icon--insight);
+}
+
+/* ============================================================
+   АДМОНИШЕН: HINT (голубой)
+   ============================================================ */
+.md-typeset .admonition.hint,
+.md-typeset details.hint {
+  border-color: #1565c0;
+}
+
+.md-typeset .hint > .admonition-title,
+.md-typeset .hint > summary {
+  background-color: #e3f2fd;
+}
+
+.md-typeset .hint > .admonition-title::before,
+.md-typeset .hint > summary::before {
+  background-color: #1565c0;
+  -webkit-mask-image: var(--md-admonition-icon--hint);
+          mask-image: var(--md-admonition-icon--hint);
+}
+
+/* ============================================================
+   АДМОНИШЕН: SANDBOX (фиолетовый)
+   ============================================================ */
+.md-typeset .admonition.sandbox,
+.md-typeset details.sandbox {
+  border-color: #6a1b9a;
+}
+
+.md-typeset .sandbox > .admonition-title,
+.md-typeset .sandbox > summary {
+  background-color: #f3e5f5;
+}
+
+.md-typeset .sandbox > .admonition-title::before,
+.md-typeset .sandbox > summary::before {
+  background-color: #6a1b9a;
+  -webkit-mask-image: var(--md-admonition-icon--sandbox);
+          mask-image: var(--md-admonition-icon--sandbox);
+}
+
+/* ============================================================
+   КАРТОЧКИ НАВИГАЦИИ
+   ============================================================ */
+.nav-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin: 1.5rem 0;
+}
+
+.nav-card {
+  border: 1px solid #c5cae9;
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  background: #f8f9ff;
+  border-left: 4px solid #3f51b5;
+}
+
+.nav-card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 0.95rem;
+  color: #1a237e;
+}
+
+.nav-card p {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #555;
+}
+
+/* ============================================================
+   ТАБЛИЦЫ
+   ============================================================ */
+.md-typeset table:not([class]) {
+  font-size: 0.85rem;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: #e8eaf6;
+  color: #1a237e;
+}
+
+/* ============================================================
+   МЕТКА
+   ============================================================ */
+.term {
+  display: inline-block;
+  background: #e8eaf6;
+  color: #1a237e;
+  border-radius: 4px;
+  padding: 0 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-right: 2px;
+}
+
+/* ============================================================
+   BADGE БАЛЛОВ
+   ============================================================ */
+.points-badge {
+  display: inline-block;
+  background: #1a237e;
+  color: white;
+  border-radius: 20px;
+  padding: 2px 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-left: 6px;
+}
+
+.points-badge.bonus {
+  background: #e65100;
+}
+
+/* ============================================================
+   ЧЕКЛИСТ-КАРТОЧКИ
+   ============================================================ */
+.checklist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+  margin: 1rem 0;
+}
+
+.checklist-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  background: white;
+}
+
+.checklist-card h4 {
+  margin: 0 0 0.4rem;
+  font-size: 0.9rem;
+}
+
+.checklist-card p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+/* ============================================================
+   МАТРИЦА ПРИОРИТИЗАЦИИ (превью)
+   ============================================================ */
+.priority-matrix {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 8px;
+  margin: 1rem 0;
+  max-width: 600px;
+}
+
+.matrix-cell {
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+  min-height: 90px;
+}
+
+.matrix-cell h4 { margin: 0 0 0.4rem; font-size: 0.88rem; }
+.matrix-cell p  { margin: 0; font-size: 0.78rem; }
+
+.matrix-q1 { background: #ffebee; border: 2px solid #e53935; color: #b71c1c; }
+.matrix-q2 { background: #e8f5e9; border: 2px solid #43a047; color: #1b5e20; }
+.matrix-q3 { background: #fff9c4; border: 2px solid #fdd835; color: #f57f17; }
+.matrix-q4 { background: #e3f2fd; border: 2px solid #1e88e5; color: #0d47a1; }
+
+/* ============================================================
+   КОД-БЛОКИ — ПОДСВЕТКА ВАЖНЫХ СТРОК
+   ============================================================ */
+.code-focus {
+  border-left: 3px solid #3f51b5;
+  padding-left: 8px;
+  margin: 0.5rem 0;
+}

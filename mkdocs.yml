@@ -1,0 +1,50 @@
+site_name: "Практическая работа: Интерактивная матрица приоритизации"
+
+use_directory_urls: false
+
+theme:
+  name: material
+  logo: assets/icons/logo.png
+  favicon: assets/icons/logo.png
+  language: ru
+  features:
+    - content.code.copy
+    - content.image.zoom
+    - navigation.top
+    - navigation.tracking
+    - navigation.sections
+    - toc.follow
+
+plugins:
+  - search
+
+nav:
+  - Обзор: index.md
+  - "1. Задание": 01-task.md
+  - "2. Этап 1 — Разметка и данные": 02-stage1.md
+  - "3. Этап 2 — Рендеринг и расчёты": 03-stage2.md
+  - "4. Этап 3 — Интерактивность": 04-stage3.md
+  - "5. Этап 4 — Хранение и экспорт": 05-stage4.md
+  - "6. Критерии оценки": 06-grading.md
+
+markdown_extensions:
+  - tables
+  - admonition
+  - attr_list
+  - pymdownx.highlight
+  - pymdownx.details
+  - pymdownx.tasklist
+  - md_in_html
+  - pymdownx.blocks.caption
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra_javascript:
+  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
+  - assets/js/mermaid-init.js
+
+extra_css:
+  - assets/stylesheets/extra.css
